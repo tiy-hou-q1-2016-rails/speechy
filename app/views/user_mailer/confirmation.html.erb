@@ -1,0 +1,21 @@
+<h1>Please Confirm</h1>
+
+<p>Oh Hai <%= @user.email %>.</p>
+
+<p>
+  Please click <%= link_to 'this link', verify_user_url(confirm_token: @user.confirm_token) %> to confirm your account.
+</p>
+
+<p>
+  Or, paste in the following to your browser window:<br><br>
+
+  <%= verify_user_url(confirm_token: @user.confirm_token) %>
+</p>
+
+<p>
+  Warm Regards,
+</p>
+
+<p>
+  WoBot
+</p>

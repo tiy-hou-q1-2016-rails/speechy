@@ -1,2 +1,5 @@
-<h1>Speeches#show</h1>
-<p>Find me in app/views/speeches/show.html.erb</p>
+<h1><%= @speech.title %> by <%= @speech.author %></h1>
+
+<%= link_to 'Share This Speech', share_speech_path(id: @speech.id), method: :post %>
+
+<%= simple_format @speech.content %>
