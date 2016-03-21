@@ -1,0 +1,16 @@
+Mechanize is a Ruby Gem that let's you open pages and extract text and other content from the pages you open.
+
+The general flow of using mechanize is:
+1) create an "agent" which will act as your browser
+2) Open a link, and get a block which will act as that page
+3) Query the page using CSS syntax. Example: find all images with a class of "detail"
+
+In this example, let's pull down the text of the 35 greatest speeches of all time, according to "some website".
+
+We create the agent, and open a link to the page, and get that `page` in our block
+
+We can ask it for all links, but usually there are many links on a page that provide links to Ads, navigation, or other tomfoolery. We only want links to the specific speeches.  So lets open up devtools and see how we can use CSS selectors to pinpoint the data we need.
+
+We see its an h3 tag with an strong tag tag inside. The link to the speech is in an A tag inside the strong.
+
+Finding the correct syntax to get at the Text, img source, and/or link href can be difficult. Think of attributes as anything inside the element, and text as its content.
