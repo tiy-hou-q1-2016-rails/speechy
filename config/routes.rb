@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   namespace :api do
     get "speeches" => 'speeches#index'
     post 'speeches' => 'speeches#create'
+    get 'authors' => 'speeches#authors'
     get 'speeches/:id' => 'speeches#show'
   end
 end

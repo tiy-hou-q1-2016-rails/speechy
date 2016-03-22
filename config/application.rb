@@ -24,5 +24,12 @@ module Speechy
     config.active_record.raise_in_transactional_callbacks = true
 
     config.action_mailer.default_url_options = { host: 'speechy-2016.herokuapp.com' }
+
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end

@@ -69,7 +69,7 @@ speech_links.each do |speech|
     }
   }
 
-  response = Http.post("http://localhost:3000/api/speeches.json", json: speech_hash)
+  response = Http.post("https://speechy-2016.herokuapp.com/api/speeches.json", json: speech_hash)
   if [200, 201].include? response.status
     puts "Yay"
   else
